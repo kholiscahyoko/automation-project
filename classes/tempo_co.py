@@ -10,10 +10,11 @@ class TempoCo:
             'data': []
         }
 
-    def process(self):
+    def process(self, limit = 0):
         response = urlopen(self.url)
         tree = etree.parse(response, self.htmlparser)
 
+        i = 0
         for element in tree.xpath('//div[@class="card-box ft240 margin-bottom-sm"]'):
             #media image
             media_poster = element.xpath('.//figure/a/img')[0]
@@ -31,3 +32,6 @@ class TempoCo:
                 "article_url" : article_url,
                 "article_title" : article_title
             })
+            i += 1
+            if i >= limit:
+                break

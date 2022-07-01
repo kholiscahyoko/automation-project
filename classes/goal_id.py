@@ -10,10 +10,11 @@ class GoalID:
             'data': []
         }
 
-    def process(self):
+    def process(self, limit = 0):
         response = urlopen(self.url)
         tree = etree.parse(response, self.htmlparser)
 
+        i = 0
         for element in tree.xpath('//section[@card-group-type="TOP_STORIES"]/ol/li[@data-type="CardComponent"]/article'):
             #media image
             media_poster = element.xpath('.//div[@class="poster-wrapper"]/a/div/img')[0]
@@ -37,4 +38,6 @@ class GoalID:
                 "article_url" : article_url,
                 "article_title" : article_title
             })
-
+            i += 1
+            if i >= limit:
+                break
