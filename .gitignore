@@ -21,3 +21,4 @@ bin-release/
 .idea/
 
 #data files
+data/*
