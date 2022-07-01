@@ -8,10 +8,6 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      gh_token:
-        description: 'GitHub access token with Repo scope'
-        required: false
-        default: ${{ github.token }}
       commit_message:
         description: "Commit message used while committing to the repo"
         default: "Updated with the latest blog posts"
