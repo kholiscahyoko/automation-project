@@ -6,8 +6,11 @@ name: Action Workflow
 # or API.
 on:
   push:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, closed]
   schedule: # Run workflow automatically
-    - cron: '0 0 * * *' # Runs every day, at 12am
+    - cron: '0 * * * *' # Runs every hour, every minute of 0
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
