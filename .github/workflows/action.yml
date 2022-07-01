@@ -6,7 +6,7 @@ name: Action Workflow
 # or API.
 on:
   schedule: # Run workflow automatically
-    - cron: '* * * * *' # Runs every hour, on the hour
+    - cron: '0 0 * * *' # Runs every hour, on the hour
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
