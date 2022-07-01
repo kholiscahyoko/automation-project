@@ -5,7 +5,7 @@ name: Action Workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  push
+  push:
   schedule: # Run workflow automatically
     - cron: '0 0 * * *' # Runs every day, at 12am
   workflow_dispatch:
