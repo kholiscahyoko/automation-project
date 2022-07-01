@@ -41,3 +41,10 @@ jobs:
         run: pip install lxml
       - name: Run main
         run: python main.py
+      - name: Commit and Push Change
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
