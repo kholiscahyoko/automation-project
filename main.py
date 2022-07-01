@@ -53,6 +53,7 @@ def main():
         })
 
     with open("./data/goal_id.json", "w") as external_file:
+        print(json.dumps(result))
         print(json.dumps(result), file=external_file)
         external_file.close()
 
