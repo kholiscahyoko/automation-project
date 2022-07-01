@@ -19,6 +19,3 @@ bin-release/
 
 #pycharm default
 .idea/
-
-#data files
-data/*
