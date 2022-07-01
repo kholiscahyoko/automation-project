@@ -52,7 +52,7 @@ def main():
             "article_title" : article_title
         })
 
-    with open("goal_id.json", "w") as external_file:
+    with open("./data/goal_id.json", "w") as external_file:
         # print(json.dumps(result))
         external_file.write(json.dumps(result))
         external_file.close()
