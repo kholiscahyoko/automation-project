@@ -8,13 +8,22 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
+      gh_token:
+        description: 'GitHub access token with Repo scope'
+        required: false
+        default: ${{ github.token }}
+      commit_message:
+        description: "Commit message used while committing to the repo"
+        default: "Updated with the latest blog posts"
+        required: false
+      committer_username:
+        description: "Username used while committing to the repo"
+        default: "blog-post-bot"
+        required: false
+      committer_email:
+        description: "Email id used while committing to the repo"
+        default: "blog-post-bot@example.com"
+        required: false
 
 jobs:
   build:
@@ -32,4 +41,6 @@ jobs:
           architecture: x64
       - name: Install lxml
         run: pip install lxml
+      - name: Checkout
+        uses: actions/checkout@v2
       - run: python main.py
