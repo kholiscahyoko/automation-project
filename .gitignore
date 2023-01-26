@@ -19,3 +19,11 @@ bin-release/
 
 #pycharm default
 .idea/
+
+#data folder
+data/
+
+#temporary ignore
+main.py
+classes/follow_tim_sepakbola_detik.py
+classes/json_to_csv.py

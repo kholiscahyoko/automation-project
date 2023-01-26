@@ -17,7 +17,7 @@ class GoalID:
         i = 0
         for element in tree.xpath('//section[@card-group-type="TOP_STORIES"]/ol/li[@data-type="CardComponent"]/article'):
             #media image
-            media_poster = element.xpath('.//div[@class="poster-wrapper"]/a/div/img')[0]
+            media_poster = element.xpath('.//div[@class="poster-wrapper"]/a/span/img')[0]
             img_src = media_poster.get("src")
             img_srcset = media_poster.get("srcset")
             img_sizes = media_poster.get("sizes")
