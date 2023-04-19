@@ -25,7 +25,7 @@ class GoalID:
             #media text and article url
             media_content = element.xpath('.//div[@class="content-wrapper"]/div[@class="content-body"]')[0]
             article_title = media_content.xpath('.//a/h3/span')[0].text.strip()
-            article_url = media_content.xpath('.//a')[0].get("href")
+            article_url = media_content.xpath('./a')[0].get("href")
             tags_elements = media_content.xpath('.//div[@data-testid="tags-list"]/a[@data-testid="single-tag"]')
             tags = []
             for tag_element in tags_elements:
