@@ -43,6 +43,8 @@ jobs:
           architecture: x64
       - name: Install lxml
         run: pip install lxml
+      - name: Install htmlmin
+        run: pip install htmlmin
       - name: Run main.py
         run: python main.py
       - name: Commit Changes
