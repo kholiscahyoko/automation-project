@@ -3,6 +3,7 @@
 import json
 from classes.goal_id import GoalID
 from classes.tempo_co import TempoCo
+from classes.info_pemilu import InfoPemilu
 
 def main():
     #config
@@ -22,5 +23,12 @@ def main():
     with open("./data/tempo_co.json", "w") as external_file:
         external_file.write(json.dumps(tempo_co.result))
         external_file.close()
+
+    # # info pemilu
+    # info_pemilu = InfoPemilu()
+    # info_pemilu.process(jenis_dewan='dpd')
+    # info_pemilu.process(jenis_dewan='dpr')
+    # info_pemilu.process(jenis_dewan='dprdp')
+    # info_pemilu.process(jenis_dewan='dprdk')
 
 main()
