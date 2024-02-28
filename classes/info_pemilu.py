@@ -107,8 +107,9 @@ class InfoPemilu:
         return min_html
 
     def process_calon(self, dapil_data, jenis_dewan = 'dpd', is_tetap = True):
-        # if(dapil_data["kode_dapil"] <= '167401') :
-        #     return
+        if(dapil_data["kode_dapil"] <= '710602') :
+        # if(dapil_data["kode_dapil"] <= '967103') :
+            return
         kode_dapil = dapil_data["kode_dapil"] if "kode_dapil" in dapil_data else dapil_data["kode_pro"]
         # print(kode_dapil)
         # exit()
@@ -189,6 +190,8 @@ class InfoPemilu:
                 kode_calon = element_kode_calon[0] if len(element_kode_calon) > 0 else None
 
             use_ori_id_calon = True
+            if(kode_calon is not None and len(kode_calon)>100) :
+                kode_calon = None
             if(kode_calon is None) :
                 parsed_foto = urlparse(foto)
                 path_segments = parsed_foto.path.split('/')
@@ -207,7 +210,6 @@ class InfoPemilu:
 
             # print(kode_calon)
             # exit()
-
 
             json_file_path = os.path.join(save_dir, f"{kode_calon}.json")
 
