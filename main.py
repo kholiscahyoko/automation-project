@@ -3,7 +3,7 @@
 import json
 from classes.goal_id import GoalID
 from classes.tempo_co import TempoCo
-from classes.info_pemilu import InfoPemilu
+#from classes.info_pemilu import InfoPemilu
 
 def main():
     #config
